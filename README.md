@@ -41,7 +41,7 @@ Données utilisées :
 - Les types d’action (tir, passe, réception, etc.)
 
 - Les métadonnées associées (minute, joueur, pression, etc.)
-- 
+  
 Outils et librairies :
 
 - Python (via Google Colab)
