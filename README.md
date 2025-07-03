@@ -1,113 +1,57 @@
-Football Data Science – Analyse et Modélisation avec StatsBomb
+# Football Data Science – Analyse et Modélisation avec StatsBomb
 
-Objectif du projet :
-Ce projet a pour but d'explorer et de modéliser des données de match semblables à ceux de la plateforme StatsBomb, dans une optique de data science appliquée au football. Il mêle analyse exploratoire, visualisations avancées, et modélisation prédictive pour mieux comprendre les dynamiques de match, les performances des joueurs, et la qualité des tirs (xG).
+## Objectif du projet  
+Ce projet a pour but d’explorer et de modéliser des données de match issues d’un format similaire à StatsBomb, afin de réaliser une data science appliquée au football :  
+- Analyse exploratoire  
+- Visualisations avancées  
+- Modélisation prédictive (xG)
 
-📂 Structure du projet
-Le projet est codé dans un notebook Jupyter, compatible Colab, et comprend les sections suivantes :
+## 📂 Structure du projet  
+Le notebook Jupyter (compatible Colab) est organisé en quatre grandes parties :
 
-- Chargement des données StatsBomb (.json)
+1. **Chargement des données**  
+   - Lecture des fichiers JSON (ex. `3788745.json`)  
+2. **Nettoyage & préparation**  
+   - Extraction des coordonnées, types d’actions, métadonnées (minute, joueur, pression…)  
+   - Normalisation & encodage  
+3. **Visualisations interactives et analytiques**  
+   - **Shot Map** : carte des tirs (taille ∝ xG)  
+   - **Timeline xG** : accumulation d’xG au fil du temps  
+   - **Réseaux de passes** : flux de passes (> 5 passes) et position moyenne  
+   - **Heatmap des réceptions** : zones de réception de balle  
+4. **Modélisation prédictive**  
+   - **Objectif** : prédire la probabilité qu’un tir devienne but  
+   - **Modèle** : `LogisticRegression` dans un pipeline scikit-learn  
+   - **Features clés** : coordonnées (x, y), minute, pression, partie du corps  
+   - **Évaluation** : `roc_auc_score`
 
-- Nettoyage et préparation des données
+## Données utilisées  
+- Données brutes OpenSource (format JSON) similaires à StatsBomb  
+- Match anonymisé : `3788745.json`  
+- Enrichissements : coordonnées, types d’actions, métadonnées  
 
-- Visualisations interactives et analytiques :
+## Outils et librairies  
+- **Python** (Google Colab)  
+- **Pandas** / **NumPy**  
+- **Plotly** & **mplsoccer**  
+- **scikit-learn** :  
+  - `Pipeline`, `ColumnTransformer`, `OneHotEncoder`, `StandardScaler`  
+  - `LogisticRegression`  
+  - `roc_auc_score`
 
-- Cartes de tirs (Shot Maps)
+## Visualisations clés  
+- **Shot Map** : représentations des tirs avec xG  
+- **Timeline xG** : comparaison des dynamiques offensives  
+- **Réseau de passes** : visualisation des connexions  
+- **Heatmap des réceptions** : zones d’influence des joueurs  
 
-- Timelines xG
+## Modélisation : Prédiction de but  
+1. **Préparation** : sélection et encodage des features  
+2. **Entraînement** : régression logistique  
+3. **Évaluation** : AUC-ROC, courbes ROC  
+4. **Interprétation** : poids des variables, importance des features  
 
-- Réseaux de passes
-
-- Heatmaps des réceptions de balle
-
-Modélisation prédictive :
-
-- Modèle de prédiction de but à partir d’un tir (xG model simple)
-
-- Pipeline de machine learning scikit-learn
-
-- Analyse des performances du modèle
-
-Données utilisées :
-
-- Données brutes gratuites OpenSource semblables à StatsBomb, en format JSON.
-
-- Match anonymisé contenu dans le fichier 3788745.json.
-
-- Données enrichies en extrayant notamment :
-
-- Les coordonnées des événements (location)
-
-- Les types d’action (tir, passe, réception, etc.)
-
-- Les métadonnées associées (minute, joueur, pression, etc.)
-  
-Outils et librairies :
-
-- Python (via Google Colab)
-
-- Pandas / NumPy pour la manipulation des données
-
-- Plotly et mplsoccer pour les visualisations sportives (terrains, réseaux, heatmaps)
-
-- scikit-learn pour la modélisation :
-
-- LogisticRegression (prédiction de but)
-
-- Pipeline, ColumnTransformer, OneHotEncoder, StandardScaler
-
-- roc_auc_score pour évaluer la qualité du modèle
-
-Visualisations clés :
-
-- Shot Map (Carte des tirs)
-Représente tous les tirs effectués, avec la taille des points proportionnelle à leur xG (expected goals).
-
-(Affichable par équipe)
-
-- Timeline xG
-Évolution de l’accumulation d’xG au fil du match.
-
-(Permet de comparer les dynamiques offensives des deux équipes)
-
-- Réseau de passes
-(Montre les connexions fréquentes entre les joueurs d’une même équipe)
-
-Représentation positionnelle moyenne et flux de passes (>5 passes).
-
-- Heatmap des réceptions
-(Carte de chaleur des ballons reçus sur le terrain)
-
-Permet d’identifier les zones d’activité principales.
-
-- Modélisation : Prédiction de but
-Un modèle de régression logistique est entraîné pour prédire la probabilité qu’un tir se transforme en but. Les variables explicatives incluent :
-
-- Coordonnées du tir (x, y)
-
-- Minute de jeu
-
-- Pression adverse
-
-- Partie du corps utilisée
-
-Choix méthodologiques :
-
-- Utilisation de features simples mais pertinentes pour le modèle de tir (pas de deep learning, modèle interprétable).
-
-- Visualisations faites avec mplsoccer, spécialisé dans le football.
-
-- Normalisation et encodage via pipelines pour reproductibilité.
-
-- Filtrage des passes ou tirs par équipe pour analyses ciblées.
-
-Conclusion :
-
-Ce projet a permis :
-
-- Une analyse complète d’un match à partir de données événementielles brutes.
-
-- La création de visualisations claires et actionnables pour la performance d’équipe et individuelle.
-
-- L’entraînement d’un modèle de xG simple mais robuste, facilement interprétable et extensible.
-
+## Conclusion  
+- Analyse complète d’un match à partir de données événementielles  
+- Visualisations actionnables pour les performances  
+- Modèle xG simple, interprétable et extensible  
