@@ -43,7 +43,16 @@ Le notebook Jupyter (compatible Colab) est organisé en quatre grandes parties :
 - **Shot Map** : représentations des tirs avec xG  
 - **Timeline xG** : comparaison des dynamiques offensives  
 - **Réseau de passes** : visualisation des connexions  
-- **Heatmap des réceptions** : zones d’influence des joueurs  
+- **Heatmap des réceptions** : zones d’influence des joueurs
+  
+### Heatmap des réceptions
+![Heatmap des réceptions](assets/heatmap.png)
+
+### Analyse d'un but
+![Analyse de but](assets/goal_analysis.png)
+
+### Réseau de passes
+![Réseau de passes](assets/network_path.png)
 
 ## Modélisation : Prédiction de but  
 1. **Préparation** : sélection et encodage des features  
