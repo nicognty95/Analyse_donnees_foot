@@ -1,7 +1,7 @@
 Football Data Science – Analyse et Modélisation avec StatsBomb
 
 Objectif du projet :
-Ce projet a pour but d'explorer et de modéliser des données de match issues de la plateforme StatsBomb, dans une optique de data science appliquée au football. Il mêle analyse exploratoire, visualisations avancées, et modélisation prédictive pour mieux comprendre les dynamiques de match, les performances des joueurs, et la qualité des tirs (xG).
+Ce projet a pour but d'explorer et de modéliser des données de match semblables à ceux de la plateforme StatsBomb, dans une optique de data science appliquée au football. Il mêle analyse exploratoire, visualisations avancées, et modélisation prédictive pour mieux comprendre les dynamiques de match, les performances des joueurs, et la qualité des tirs (xG).
 
 📂 Structure du projet
 Le projet est codé dans un notebook Jupyter, compatible Colab, et comprend les sections suivantes :
@@ -28,8 +28,9 @@ Modélisation prédictive :
 
 - Analyse des performances du modèle
 
-Données utilisées
-- Données brutes issues de la base StatsBomb, en format JSON.
+Données utilisées :
+
+- Données brutes gratuites OpenSource semblables à StatsBomb, en format JSON.
 
 - Match anonymisé contenu dans le fichier 3788745.json.
 
@@ -40,7 +41,9 @@ Données utilisées
 - Les types d’action (tir, passe, réception, etc.)
 
 - Les métadonnées associées (minute, joueur, pression, etc.)
-Outils et librairies
+- 
+Outils et librairies :
+
 - Python (via Google Colab)
 
 - Pandas / NumPy pour la manipulation des données
@@ -55,24 +58,25 @@ Outils et librairies
 
 - roc_auc_score pour évaluer la qualité du modèle
 
-📊 Visualisations clés
+Visualisations clés :
+
 - Shot Map (Carte des tirs)
 Représente tous les tirs effectués, avec la taille des points proportionnelle à leur xG (expected goals).
 
-Affichable par équipe.
+(Affichable par équipe)
 
 - Timeline xG
 Évolution de l’accumulation d’xG au fil du match.
 
-Permet de comparer les dynamiques offensives des deux équipes.
+(Permet de comparer les dynamiques offensives des deux équipes)
 
 - Réseau de passes
-Montre les connexions fréquentes entre les joueurs d’une même équipe.
+(Montre les connexions fréquentes entre les joueurs d’une même équipe)
 
 Représentation positionnelle moyenne et flux de passes (>5 passes).
 
 - Heatmap des réceptions
-Carte de chaleur des ballons reçus sur le terrain.
+(Carte de chaleur des ballons reçus sur le terrain)
 
 Permet d’identifier les zones d’activité principales.
 
@@ -88,6 +92,7 @@ Un modèle de régression logistique est entraîné pour prédire la probabilit�
 - Partie du corps utilisée
 
 Choix méthodologiques :
+
 - Utilisation de features simples mais pertinentes pour le modèle de tir (pas de deep learning, modèle interprétable).
 
 - Visualisations faites avec mplsoccer, spécialisé dans le football.
