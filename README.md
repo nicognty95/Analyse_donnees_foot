@@ -96,8 +96,9 @@ Choix méthodologiques :
 
 - Filtrage des passes ou tirs par équipe pour analyses ciblées.
 
-Conclusion
-Ce projet permet :
+Conclusion :
+
+Ce projet a permis :
 
 - Une analyse complète d’un match à partir de données événementielles brutes.
 
